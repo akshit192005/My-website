@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just for You</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 90%;
+    }
+    .reveal-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ee9ca7;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .reveal-btn:hover {
+      background-color: #ff99a3;
+    }
+    .message {
+      display: none;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+    textarea {
+      width: 90%;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+    button.send-btn {
+      margin-top: 10px;
+      background-color: #f48fb1;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/06/audio_3270e5f7f0.mp3?filename=romantic-piano-loop-141697.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h2>Hey, I have something for you 💌</h2>
+    <button class="reveal-btn" onclick="revealMessage()">Click to Reveal</button>
+    <div class="message" id="loveMessage">
+      <p>
+        You are the most beautiful part of my life. Even when I don’t say it, I hope you feel it — in every small thing, every little word, every tiny smile. You deserve a world full of gentle mornings and warm hugs. This is just a small reminder... you're deeply loved. 💖
+      </p>
+      <textarea placeholder="Write me something back..."></textarea><br>
+      <button class="reveal-btn send-btn" onclick="sendReply()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function revealMessage() {
+      document.getElementById('loveMessage').style.display = 'block';
+    }
+
+    function sendReply() {
+      const message = document.querySelector('textarea').value;
+      if(message.trim() === ''){
+        alert('Write something first :)');
+        return;
+      }
+      alert("Your reply was sent! (Not really, but this can be connected later 💌)");
+    }
+  </script>
+</body>
+</html>
